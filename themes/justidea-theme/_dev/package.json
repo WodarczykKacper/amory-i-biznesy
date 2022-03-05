@@ -4,8 +4,7 @@
   "author": "JustIdea",
   "description": "Minimal webpack boilerplate with HMR and sass",
   "prestatheme": {
-    "publicPath": "/themes/justidea-theme/assets/",
-   
+    "publicPath": "/themes/justidea-theme/assets/"
   },
   "repository": {
     "type": "git",
