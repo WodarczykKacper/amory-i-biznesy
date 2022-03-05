@@ -11,8 +11,8 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* __string_template__26d9b328f964223f99a86ac23584627058881285d1d876a65e126e48a3c4473c */
-class __TwigTemplate_b320ae81e1606f6cff9751f355478e7cf511060829fb2b6f035da0e2b908510f extends \Twig\Template
+/* __string_template__168a0d01b4acc800f7c216a32164736aab468999dce639241439c28adb11ee60 */
+class __TwigTemplate_3bd48703877495e5610799f7ed5e6f0c9eef27da453c0a141f83f61d1c69f744 extends \Twig\Template
 {
     public function __construct(Environment $env)
     {
@@ -47,10 +47,10 @@ class __TwigTemplate_b320ae81e1606f6cff9751f355478e7cf511060829fb2b6f035da0e2b90
 <link rel=\"icon\" type=\"image/x-icon\" href=\"/grawstepna/img/favicon.ico\" />
 <link rel=\"apple-touch-icon\" href=\"/grawstepna/img/app_icon.png\" />
 
-<title>Pozycje • Gra wstępna</title>
+<title>Wydajność • Gra wstępna</title>
 
   <script type=\"text/javascript\">
-    var help_class_name = 'AdminModulesPositions';
+    var help_class_name = 'AdminPerformance';
     var iso_user = 'pl';
     var lang_is_rtl = '0';
     var full_language_code = 'pl';
@@ -68,11 +68,11 @@ class __TwigTemplate_b320ae81e1606f6cff9751f355478e7cf511060829fb2b6f035da0e2b90
     var customer_name_msg = 'Nazwa klienta: ';
     var new_msg = 'Nowa wiadomość pojawiła się w Twoim sklepie.';
     var see_msg = 'Przeczytaj tą wiadomość';
-    var token = '8c907459d313e84a17db23f4a8ac36fb';
+    var token = '0690635655f2d18bc355726c7429713a';
     var token_admin_orders = tokenAdminOrders = '702076e26b088f0f4c8620baa24c0e76';
     var token_admin_customers = '4f72cd432af8b816cf9bfa2c288beca5';
     var token_admin_customer_threads = tokenAdminCustomerThreads = 'b50a43db7cacd598e88ff8793e690a30';
-    var currentIndex = 'index.php?controller=AdminModulesPositions';
+    var currentIndex = 'index.php?controller=AdminPerformance';
     var employee_token = 'a376f81c9cb2190c2b9d4aa00ff51469';
     var choose_language_translate = 'Wybierz język:';
     var default_language = '1';
@@ -91,6 +91,7 @@ class __TwigTemplate_b320ae81e1606f6cff9751f355478e7cf511060829fb2b6f035da0e2b90
       <link href=\"/grawstepna/modules/blockwishlist/public/backoffice.css\" rel=\"stylesheet\" type=\"text/css\"/>
       <link href=\"/grawstepna/admin801ea3qk6/themes/default/css/vendor/nv.d3.css\" rel=\"stylesheet\" type=\"text/css\"/>
       <link href=\"/grawstepna/modules/gamification/views/css/gamification.css\" rel=\"stylesheet\" type=\"text/css\"/>
+      <link href=\"/grawstepna/modules/ps_mbo/views/css/recommended-modules.css\" rel=\"stylesheet\" type=\"text/css\"/>
       <link href=\"/grawstepna/modules/ps_facebook/views/css/admin/menu.css\" rel=\"stylesheet\" type=\"text/css\"/>
       <link href=\"/grawstepna/modules/psxmarketingwithgoogle/views/css/admin/menu.css\" rel=\"stylesheet\" type=\"text/css\"/>
   
@@ -135,18 +136,18 @@ var show_new_orders = \"1\";
 </script>
 <script>
             var admin_gamification_ajax_url = \"https:\\/\\/localhost\\/grawstepna\\/admin801ea3qk6\\/index.php?controller=AdminGamification&token=9602be0f046a801c1c8f01e3ce791fbd\";
-            var current_id_tab = 58;
+            var current_id_tab = 105;
         </script>
 
 ";
-        // line 103
+        // line 104
         $this->displayBlock('stylesheets', $context, $blocks);
         $this->displayBlock('extra_stylesheets', $context, $blocks);
         echo "</head>";
         echo "
 
 <body
-  class=\"lang-pl adminmodulespositions\"
+  class=\"lang-pl adminperformance\"
   data-base-url=\"/grawstepna/admin801ea3qk6/index.php\"  data-token=\"8hFeiCdFenYp0vx_-31w749Wo0ximnNuDmx72THS3ew\">
 
   <header id=\"header\" class=\"d-print-none\">
@@ -192,13 +193,13 @@ var show_new_orders = \"1\";
           <a id=\"quick-add-link\"
         class=\"dropdown-item js-quick-link\"
         href=\"#\"
-        data-rand=\"87\"
-        data-icon=\"icon-AdminParentThemes\"
+        data-rand=\"25\"
+        data-icon=\"icon-AdminAdvancedParameters\"
         data-method=\"add\"
-        data-url=\"index.php/improve/design/modules/positions/?-31w749Wo0ximnNuDmx72THS3ew\"
+        data-url=\"index.php/configure/advanced/performance/?-31w749Wo0ximnNuDmx72THS3ew\"
         data-post-link=\"https://localhost/grawstepna/admin801ea3qk6/index.php?controller=AdminQuickAccesses&token=45ba1142b88dce480ac7b5822d8e0843\"
         data-prompt-text=\"Proszę podać nazwę tego skrótu:\"
-        data-link=\"Pozycje - Lista\"
+        data-link=\"Wydajność - Lista\"
       >
         <i class=\"material-icons\">add_circle</i>
         Dodaj aktualną stronę do Szybkiego dostępu
@@ -668,7 +669,7 @@ var show_new_orders = \"1\";
                                           
                     
           
-            <li class=\"category-title link-active\" data-submenu=\"42\" id=\"tab-IMPROVE\">
+            <li class=\"category-title\" data-submenu=\"42\" id=\"tab-IMPROVE\">
                 <span class=\"title\">Ulepszenia</span>
             </li>
 
@@ -708,15 +709,15 @@ var show_new_orders = \"1\";
                                               
                   
                                                       
-                                                          
-                  <li class=\"link-levelone has_submenu link-active open ul-open\" data-submenu=\"52\" id=\"subtab-AdminParentThemes\">
+                  
+                  <li class=\"link-levelone has_submenu\" data-submenu=\"52\" id=\"subtab-AdminParentThemes\">
                     <a href=\"/grawstepna/admin801ea3qk6/index.php/improve/design/themes/?_token=8hFeiCdFenYp0vx_-31w749Wo0ximnNuDmx72THS3ew\" class=\"link\">
                       <i class=\"material-icons mi-desktop_mac\">desktop_mac</i>
                       <span>
                       Wygląd
                       </span>
                                                     <i class=\"material-icons sub-tabs-arrow\">
-                                                                    keyboard_arrow_up
+                                                                    keyboard_arrow_down
                                                             </i>
                                             </a>
                                               <ul id=\"collapse-52\" class=\"submenu panel-collapse\">
@@ -755,7 +756,7 @@ var show_new_orders = \"1\";
                                                                                   
                               
                                                             
-                              <li class=\"link-leveltwo link-active\" data-submenu=\"58\" id=\"subtab-AdminModulesPositions\">
+                              <li class=\"link-leveltwo\" data-submenu=\"58\" id=\"subtab-AdminModulesPositions\">
                                 <a href=\"/grawstepna/admin801ea3qk6/index.php/improve/design/modules/positions/?_token=8hFeiCdFenYp0vx_-31w749Wo0ximnNuDmx72THS3ew\" class=\"link\"> Pozycje
                                 </a>
                               </li>
@@ -932,7 +933,7 @@ var show_new_orders = \"1\";
                                           
                     
           
-            <li class=\"category-title\" data-submenu=\"80\" id=\"tab-CONFIGURE\">
+            <li class=\"category-title link-active\" data-submenu=\"80\" id=\"tab-CONFIGURE\">
                 <span class=\"title\">Konfiguruj</span>
             </li>
 
@@ -1020,15 +1021,15 @@ var show_new_orders = \"1\";
                                               
                   
                                                       
-                  
-                  <li class=\"link-levelone has_submenu\" data-submenu=\"103\" id=\"subtab-AdminAdvancedParameters\">
+                                                          
+                  <li class=\"link-levelone has_submenu link-active open ul-open\" data-submenu=\"103\" id=\"subtab-AdminAdvancedParameters\">
                     <a href=\"/grawstepna/admin801ea3qk6/index.php/configure/advanced/system-information/?_token=8hFeiCdFenYp0vx_-31w749Wo0ximnNuDmx72THS3ew\" class=\"link\">
                       <i class=\"material-icons mi-settings_applications\">settings_applications</i>
                       <span>
                       Zaawansowane
                       </span>
                                                     <i class=\"material-icons sub-tabs-arrow\">
-                                                                    keyboard_arrow_down
+                                                                    keyboard_arrow_up
                                                             </i>
                                             </a>
                                               <ul id=\"collapse-103\" class=\"submenu panel-collapse\">
@@ -1043,7 +1044,7 @@ var show_new_orders = \"1\";
                                                                                   
                               
                                                             
-                              <li class=\"link-leveltwo\" data-submenu=\"105\" id=\"subtab-AdminPerformance\">
+                              <li class=\"link-leveltwo link-active\" data-submenu=\"105\" id=\"subtab-AdminPerformance\">
                                 <a href=\"/grawstepna/admin801ea3qk6/index.php/configure/advanced/performance/?_token=8hFeiCdFenYp0vx_-31w749Wo0ximnNuDmx72THS3ew\" class=\"link\"> Wydajność
                                 </a>
                               </li>
@@ -1129,10 +1130,10 @@ var show_new_orders = \"1\";
     
       <nav aria-label=\"Breadcrumb\">
         <ol class=\"breadcrumb\">
-                      <li class=\"breadcrumb-item\">Wygląd</li>
+                      <li class=\"breadcrumb-item\">Zaawansowane</li>
           
                       <li class=\"breadcrumb-item active\">
-              <a href=\"/grawstepna/admin801ea3qk6/index.php/improve/design/modules/positions/?_token=8hFeiCdFenYp0vx_-31w749Wo0ximnNuDmx72THS3ew\" aria-current=\"page\">Pozycje</a>
+              <a href=\"/grawstepna/admin801ea3qk6/index.php/configure/advanced/performance/?_token=8hFeiCdFenYp0vx_-31w749Wo0ximnNuDmx72THS3ew\" aria-current=\"page\">Wydajność</a>
             </li>
                   </ol>
       </nav>
@@ -1141,7 +1142,7 @@ var show_new_orders = \"1\";
     <div class=\"title-row\">
       
           <h1 class=\"title\">
-            Pozycje          </h1>
+            Wydajność          </h1>
       
 
       
@@ -1149,9 +1150,9 @@ var show_new_orders = \"1\";
           <div class=\"wrapper\">
             
                                                           <a
-                  class=\"btn btn-primary pointer\"                  id=\"page-header-desc-configuration-save\"
-                  href=\"https://localhost/grawstepna/admin801ea3qk6/index.php?controller=AdminModulesPositions&amp;addToHook=&amp;token=8c907459d313e84a17db23f4a8ac36fb\"                  title=\"Przemieszczanie modułu\"                >
-                                    Przemieszczanie modułu
+                  class=\"btn btn-primary pointer\"                  id=\"page-header-desc-configuration-clear_cache\"
+                  href=\"/grawstepna/admin801ea3qk6/index.php/configure/advanced/performance/clear-cache?_token=8hFeiCdFenYp0vx_-31w749Wo0ximnNuDmx72THS3ew\"                  title=\"Wyczyść pamięć podręczną\"                >
+                  <i class=\"material-icons\">delete</i>                  Wyczyść pamięć podręczną
                 </a>
                                       
             
@@ -1159,7 +1160,7 @@ var show_new_orders = \"1\";
                    title=\"Pomoc\"
                    data-toggle=\"sidebar\"
                    data-target=\"#right-sidebar\"
-                   data-url=\"/grawstepna/admin801ea3qk6/index.php/common/sidebar/https%253A%252F%252Fhelp.prestashop.com%252Fpl%252Fdoc%252FAdminModulesPositions%253Fversion%253D1.7.8.3%2526country%253Dpl/Pomoc?_token=8hFeiCdFenYp0vx_-31w749Wo0ximnNuDmx72THS3ew\"
+                   data-url=\"/grawstepna/admin801ea3qk6/index.php/common/sidebar/https%253A%252F%252Fhelp.prestashop.com%252Fpl%252Fdoc%252FAdminAdvancedParametersPerformance%253Fversion%253D1.7.8.3%2526country%253Dpl/Pomoc?_token=8hFeiCdFenYp0vx_-31w749Wo0ximnNuDmx72THS3ew\"
                    id=\"product_form_open_help\"
                 >
                   Pomoc
@@ -1181,16 +1182,16 @@ var show_new_orders = \"1\";
       <div class=\"btn-floating-menu\">
         
                               <a
-              class=\"btn btn-floating-item  pointer\"              id=\"page-header-desc-floating-configuration-save\"
-              href=\"https://localhost/grawstepna/admin801ea3qk6/index.php?controller=AdminModulesPositions&amp;addToHook=&amp;token=8c907459d313e84a17db23f4a8ac36fb\"              title=\"Przemieszczanie modułu\"            >
-              Przemieszczanie modułu
-                          </a>
+              class=\"btn btn-floating-item  pointer\"              id=\"page-header-desc-floating-configuration-clear_cache\"
+              href=\"/grawstepna/admin801ea3qk6/index.php/configure/advanced/performance/clear-cache?_token=8hFeiCdFenYp0vx_-31w749Wo0ximnNuDmx72THS3ew\"              title=\"Wyczyść pamięć podręczną\"            >
+              Wyczyść pamięć podręczną
+              <i class=\"material-icons\">delete</i>            </a>
                   
                               <a class=\"btn btn-floating-item btn-help btn-sidebar\" href=\"#\"
                title=\"Pomoc\"
                data-toggle=\"sidebar\"
                data-target=\"#right-sidebar\"
-               data-url=\"/grawstepna/admin801ea3qk6/index.php/common/sidebar/https%253A%252F%252Fhelp.prestashop.com%252Fpl%252Fdoc%252FAdminModulesPositions%253Fversion%253D1.7.8.3%2526country%253Dpl/Pomoc?_token=8hFeiCdFenYp0vx_-31w749Wo0ximnNuDmx72THS3ew\"
+               data-url=\"/grawstepna/admin801ea3qk6/index.php/common/sidebar/https%253A%252F%252Fhelp.prestashop.com%252Fpl%252Fdoc%252FAdminAdvancedParametersPerformance%253Fversion%253D1.7.8.3%2526country%253Dpl/Pomoc?_token=8hFeiCdFenYp0vx_-31w749Wo0ximnNuDmx72THS3ew\"
             >
               Pomoc
             </a>
@@ -1204,9 +1205,9 @@ var show_new_orders = \"1\";
         'Recommended Modules and Services': 'Zalecane moduły i usługi',
         'Close': 'Zamknij',
       },
-      recommendedModulesUrl: '/grawstepna/admin801ea3qk6/index.php/modules/addons/modules/recommended?tabClassName=AdminModulesPositions&_token=8hFeiCdFenYp0vx_-31w749Wo0ximnNuDmx72THS3ew',
+      recommendedModulesUrl: '/grawstepna/admin801ea3qk6/index.php/modules/addons/modules/recommended?tabClassName=AdminPerformance&_token=8hFeiCdFenYp0vx_-31w749Wo0ximnNuDmx72THS3ew',
       shouldAttachRecommendedModulesAfterContent: 0,
-      shouldAttachRecommendedModulesButton: 0,
+      shouldAttachRecommendedModulesButton: 1,
       shouldUseLegacyTheme: 0,
     });
   }
@@ -1227,7 +1228,7 @@ var show_new_orders = \"1\";
 
 
   ";
-        // line 1186
+        // line 1187
         $this->displayBlock('content_header', $context, $blocks);
         $this->displayBlock('content', $context, $blocks);
         $this->displayBlock('content_footer', $context, $blocks);
@@ -1341,7 +1342,7 @@ var show_new_orders = \"1\";
     </div>
   
 ";
-        // line 1294
+        // line 1295
         $this->displayBlock('javascripts', $context, $blocks);
         $this->displayBlock('extra_javascripts', $context, $blocks);
         $this->displayBlock('translate_javascripts', $context, $blocks);
@@ -1350,7 +1351,7 @@ var show_new_orders = \"1\";
 </html>";
     }
 
-    // line 103
+    // line 104
     public function block_stylesheets($context, array $blocks = [])
     {
     }
@@ -1359,7 +1360,7 @@ var show_new_orders = \"1\";
     {
     }
 
-    // line 1186
+    // line 1187
     public function block_content_header($context, array $blocks = [])
     {
     }
@@ -1376,7 +1377,7 @@ var show_new_orders = \"1\";
     {
     }
 
-    // line 1294
+    // line 1295
     public function block_javascripts($context, array $blocks = [])
     {
     }
@@ -1391,7 +1392,7 @@ var show_new_orders = \"1\";
 
     public function getTemplateName()
     {
-        return "__string_template__26d9b328f964223f99a86ac23584627058881285d1d876a65e126e48a3c4473c";
+        return "__string_template__168a0d01b4acc800f7c216a32164736aab468999dce639241439c28adb11ee60";
     }
 
     public function isTraitable()
@@ -1401,7 +1402,7 @@ var show_new_orders = \"1\";
 
     public function getDebugInfo()
     {
-        return array (  1380 => 1294,  1363 => 1186,  1354 => 103,  1345 => 1294,  1231 => 1186,  143 => 103,  39 => 1,);
+        return array (  1381 => 1295,  1364 => 1187,  1355 => 104,  1346 => 1295,  1232 => 1187,  144 => 104,  39 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -1414,6 +1415,6 @@ var show_new_orders = \"1\";
 
     public function getSourceContext()
     {
-        return new Source("", "__string_template__26d9b328f964223f99a86ac23584627058881285d1d876a65e126e48a3c4473c", "");
+        return new Source("", "__string_template__168a0d01b4acc800f7c216a32164736aab468999dce639241439c28adb11ee60", "");
     }
 }

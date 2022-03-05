@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.39, created on 2022-03-05 19:22:22
+/* Smarty version 3.1.39, created on 2022-03-05 20:06:03
   from 'C:\xampp\htdocs\grawstepna\admin801ea3qk6\themes\new-theme\template\components\layout\search_form.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6223aa5e582e02_98444565',
+  'unifunc' => 'content_6223b49b42c740_55396754',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6223aa5e582e02_98444565 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6223b49b42c740_55396754 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <form id="header_search"
       class="bo_search_form dropdown-form js-dropdown-form collapsed"

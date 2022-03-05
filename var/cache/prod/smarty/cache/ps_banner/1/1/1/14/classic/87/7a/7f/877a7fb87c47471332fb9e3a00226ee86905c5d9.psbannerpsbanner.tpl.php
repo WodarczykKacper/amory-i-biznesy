@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.39, created on 2022-03-05 19:18:54
+/* Smarty version 3.1.39, created on 2022-03-05 20:08:24
   from 'module:psbannerpsbanner.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6223a98e700e98_80752711',
+  'unifunc' => 'content_6223b528568c17_41959286',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -18,7 +18,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   ),
   'cache_lifetime' => 31536000,
 ),true)) {
-function content_6223a98e700e98_80752711 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6223b528568c17_41959286 (Smarty_Internal_Template $_smarty_tpl) {
 ?><a class="banner" href="https://localhost/grawstepna/" title="">
       <img src="https://localhost/grawstepna/modules/ps_banner/img/sale70.png" alt="" title="" class="img-fluid" loading="lazy" width="1110" height="213">
   </a>
