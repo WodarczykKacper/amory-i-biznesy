@@ -2,7 +2,7 @@
   'parameters' => 
   array (
     'database_host' => '127.0.0.1',
-    'database_port' => '',
+    'database_port' => '3000',
     'database_name' => 'grawstepna',
     'database_user' => 'root',
     'database_password' => '',
