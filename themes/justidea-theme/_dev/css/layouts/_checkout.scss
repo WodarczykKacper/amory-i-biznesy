@@ -1,0 +1,62 @@
+.input-group {
+
+  span.input-group-btn {
+    position: absolute;
+    right: 50px;
+    top: 2px;
+    z-index: 3;
+
+    .btn-password{      
+      i {
+        color: #000;
+      }
+    }
+  }
+}
+
+body#checkout {
+  .cart-summary-subtotals-container {
+    padding-left: 0;
+    padding-right: 0;
+
+  }
+  .checkout-summary {
+    position: sticky;
+    top: 250px;
+    float: right;
+  }
+  .input-group .input-group-btn>.btn {
+    background-color: transparent;
+  }
+
+  .cart-grid-body {
+    max-width: 600px;
+  }
+
+  .step-title.h3, .checkout-summary-title {
+    font-size: 13px;
+    line-height: 125%;
+    letter-spacing: 1.04px;
+    // margin-bottom: 30px !important;
+  }
+  
+  .checkout-summary-title {
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid rgba(0, 0, 0, 1);
+    text-transform: uppercase;
+    color: #000;
+    font-weight: 800;
+  }
+
+  #js-checkout-summary {
+
+    .cart-summary-products p, .cart-summary-subtotals span {
+      font-size: 16px;
+    }
+    .cart-summary-subtotals span {
+      margin-bottom: 30px;
+    }
+  }
+
+}

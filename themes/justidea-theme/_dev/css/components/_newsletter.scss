@@ -1,0 +1,40 @@
+.footer-bg {
+	background-image: url("../img/newsletter.jpg");
+	background-position: center top;
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding-top: 90px;
+	padding-bottom: 500px;
+
+	.block_newsletter {
+		background-color: transparent;
+		max-width: 750px;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+
+		&__wrapp {
+			max-width: 600px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		&__title {
+			font-size: 20px;
+			line-height: 36px;
+			letter-spacing: 3px;
+			font-weight: 800;
+		}
+
+    &__consent {      
+			font-size: 16px;
+			line-height: 26px;
+			letter-spacing: 0.32px;
+      margin-bottom: 23px;
+    }
+
+		p {
+			color: black;
+		}
+	}
+}

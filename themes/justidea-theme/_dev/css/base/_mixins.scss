@@ -1,0 +1,79 @@
+@mixin hamburger-line {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+}
+
+@mixin mqmax($breakpoint) {
+
+  @if $breakpoint == desktop {
+    @media only screen and (max-width: 1399px) {
+      @content;
+    }
+  }
+  @if $breakpoint == desktop-sm {
+    @media only screen and (max-width: 1199px) {
+      @content;
+    }
+  }
+  @if $breakpoint == tablet {
+    @media only screen and (max-width: 991px) {
+      @content;
+    }
+  }
+  @if $breakpoint == tablet-sm {
+    @media only screen and (max-width: 767px) {
+      @content;
+    }
+  }
+  @if $breakpoint == mobile-xl {
+    @media only screen and (max-width: 575px) {
+      @content;
+    }
+  }
+  @if $breakpoint == mobile {
+    @media only screen and (max-width: 460px) {
+      @content;
+    }
+  }
+  @if $breakpoint == mobile-sm {
+    @media only screen and (max-width: 360px) {
+      @content;
+    }
+  }
+}
+
+@mixin mqmin($breakpoint) {
+
+  @if $breakpoint == desktop-xl {
+    @media only screen and (min-width: 1400px) {
+      @content;
+    }
+  }
+  @if $breakpoint == desktop {
+    @media only screen and (min-width: 1200px) {
+      @content;
+    }
+  }
+  @if $breakpoint == desktop-sm {
+    @media only screen and (min-width: 992px) {
+      @content;
+    }
+  }
+  @if $breakpoint == tablet {
+    @media only screen and (min-width: 768px) {
+      @content;
+    }
+  }
+  @if $breakpoint == tablet-sm {
+    @media only screen and (min-width: 461px) {
+      @content;
+    }
+  }
+  @if $breakpoint == mobile {
+    @media only screen and (min-width: 361px) {
+      @content;
+    }
+  }
+}
