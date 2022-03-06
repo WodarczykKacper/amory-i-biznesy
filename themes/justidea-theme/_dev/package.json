@@ -4,9 +4,9 @@
   "author": "JustIdea",
   "description": "Minimal webpack boilerplate with HMR and sass",
   "prestatheme": {
-    "publicPath": "/themes/justidea-theme/assets/"
-    // "proxyURL": "http://surf2.com.pl",
-    // "proxyHost": "surf2.com.pl"
+    "publicPath": "/themes/justidea-theme/assets/",
+    "proxyURL": "localhost/grawstepna",
+    "proxyHost": "localhost/grawstepna"
   },
   "repository": {
     "type": "git",
@@ -61,11 +61,5 @@
   "dependencies": {
     "js-cookie": "^3.0.1",
     "normalize-url": "^6.0.1"
-  }
-}
-^0.1.0"
-  },
-  "dependencies": {
- 
   }
 }

@@ -1,7 +1,7 @@
 /var
 /.vscode
 # /themes/justidea/assets/js/hot
-/themes/justidea/_dev/node_modules
+/themes/justidea-theme/_dev/node_modules
 /img/tmp
 *.zip
 # Cache, temp and personal files
