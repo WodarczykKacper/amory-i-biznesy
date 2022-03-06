@@ -1,151 +1,164 @@
-const currentTask = process.env.npm_lifecycle_event
-const path = require("path")
-const MiniCssExtractPlugin = require("mini-css-extract-plugin")
-const { CleanWebpackPlugin } = require("clean-webpack-plugin")
-const {WebpackManifestPlugin} = require("webpack-manifest-plugin")
-const fse = require("fs-extra")
-const pjson = require(path.join(__dirname, 'package.json'))
-
-const options = {
-  host: process.env.HOST || 'localhost', 
-  port: process.env.PORT || 3000,
-  bundledJsFileName: 'hotupdate-bundle.js',
-};
-
-options.publicPath = `http://${options.host}:${options.port}${pjson.prestatheme.publicPath}`
-
-
-class RunAfterCompile {
-  apply(compiler) {
-    compiler.hooks.done.tap("Update FrontController.php", function () {
-      // update FrontController php here
-      const manifest = fse.readJsonSync("../assets/bundledassets/manifest.json")
-
-      fse.readFile("../../../classes/controller/FrontController.php", "utf8", function (err, data) {
-        if (err) {
-          console.log(err)
-        }
-
-        // const devserverRegEx = new RegExp("'main-script-js-dev-server', 'http.+?'", "g")
-
-        const scriptsRegEx = new RegExp("'theme-script-bundle-dev', '.+?'", "g")
-        const scriptsRegEx2 = new RegExp("'theme-script-bundle-dev2', '.+?'", "g")
-        // const vendorsRegEx = new RegExp("/assets/bundled-assets/vendors.+?'", "g")
-        // const cssRegEx = new RegExp("'theme-style-bundle-dev', '.+?'", "g")
-
-        let result = data
-          // .replace(devserverRegEx, `'main-script-js-dev-server', 'http://${options.host}:${options.port}${pjson.prestatheme.publicPath}${options.bundledJsFileName}'`)
-          .replace(scriptsRegEx, `'theme-script-bundle-dev', '/assets/bundledassets/${manifest["scripts.js"]}'`)
-          .replace(scriptsRegEx2, `'theme-script-bundle-dev2', '/assets/bundledassets/${manifest["312.js"]}'`)
-
-        fse.writeFile("../../../classes/controller/FrontController.php", result, "utf8", function (err) {
-          if (err) return console.log(err)
-        })
-      })
-    })
-  }
-}
-
-let scssConfig = {
-  test: /\.(sass|scss)$/,
-  use: ["css-loader", "sass-loader"],
-}
-
-let cssConfig = {
-  test: /\.css$/,
-  use: [
-    "css-loader",
-    {
-      loader: "postcss-loader",
-      options: {
-        postcssOptions: {
-          plugins: [require("autoprefixer")],
-        },
-      },
-    },
-  ],
-}
-
-
-let imgConfig = {
-  test: /\.(jpg|png|svg|gif|jpeg)$/,
-  use: "url-loader?emitFile=false",
-}
-
-
-let config = {
-  entry: {
-    scripts: "./js/all.js",
-  },
-  plugins: [],
-  module: {
-    rules: [
-      cssConfig,
-      scssConfig,
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: "babel-loader",
-      },
-      imgConfig,
-    ],
-  },
-}
-
-
-if (currentTask == "devFast") {
-  config.devtool = "inline-source-map"
-  cssConfig.use.unshift("style-loader")
-  scssConfig.use.unshift("style-loader")
-  config.output = {
-    filename: options.bundledJsFileName,
-    publicPath: options.publicPath,
-  }
-  config.devServer = {
-    hot: true,
-    port: options.port,
-    headers: {
-      "Access-Control-Allow-Origin": "*",
-    },
-    allowedHosts: 'all',
-    proxy: {
-      "**": {
-        target: pjson.prestatheme.proxyURL,
-        secure: false,
-        changeOrigin: true,
-        autoRewrite: true,
-        headers: {
-          'X-ProxiedBy-Webpack': true,
-        },
-      },
-    },
-    watchFiles: ["./../../../**/*.php", "./../../../**/*.tpl"],
-    liveReload: false,
-    historyApiFallback: true,
-  }
-  config.mode = "development"
-}
-
-if (currentTask == "build" || currentTask == "buildWatch") {
-  cssConfig.use[0] = "css-loader?url=false"
-  cssConfig.use.unshift(MiniCssExtractPlugin.loader)
-  scssConfig.use.unshift(MiniCssExtractPlugin.loader)
-  config.output = {
-    publicPath: "/themes/justidea/assets/bundledassets/",
-    filename: "[name].[chunkhash].js",
-    chunkFilename: "[name].[chunkhash].js",
-    path: path.resolve(__dirname, "../","assets/bundledassets"),
-  }
-  config.mode = "production"
-  config.optimization = {
-    splitChunks: { chunks: "all" },
-  }
-  config.plugins.push(
-    new CleanWebpackPlugin(),
-    new MiniCssExtractPlugin({ filename: "../css/style-bundle.css" }),
-    new WebpackManifestPlugin({ publicPath: "" }),
-    new RunAfterCompile()
-  )
-}
-
-module.exports = config
+/**
+ * 2007-2018 PrestaShop
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License 3.0 (AFL-3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * https://opensource.org/licenses/AFL-3.0
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@prestashop.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade PrestaShop to newer
+ * versions in the future. If you wish to customize PrestaShop for your
+ * needs please refer to http://www.prestashop.com for more information.
+ *
+ * @author    PrestaShop SA <contact@prestashop.com>
+ * @copyright 2007-2018 PrestaShop SA
+ * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
+ * International Registered Trademark & Property of PrestaShop SA
+ */
+ const webpack = require('webpack');
+ const path = require('path');
+ const ExtractTextPlugin = require("extract-text-webpack-plugin");
+ const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+ 
+ let config = {
+   entry: {
+     main: [
+       './js/theme.js',
+       './css/theme.scss'
+     ]
+   },
+   output: {
+     path: path.resolve(__dirname, '../assets/js'),
+     filename: 'theme.js'
+   },
+   module: {
+     
+     rules: [
+       {
+         test: /\.js/,
+         exclude: /node_modules/,
+         loader: 'babel-loader',
+       },
+       {
+         test: /\.scss$/,
+         use: ExtractTextPlugin.extract({
+           fallback: 'style-loader',
+           use: [
+             {
+               loader: 'css-loader',
+                 // options: {
+                 //   sourceMap: true,
+                 //   importLoaders: true,
+                 // }
+             },
+             // 'postcss-loader',
+             // 'sass-loader'
+             {
+               loader: 'postcss-loader',
+               options: { 
+                 sourceMap: 'inline'
+               }
+             },
+             {
+               loader: 'sass-loader',
+               options: {
+                 sourceMap: true,
+               },
+             }
+           ]
+         })
+       },
+       {
+         test: /.(woff(2)?|eot|ttf|svg)(\?[a-z0-9=\.]+)?$/,
+         use: [
+           {
+             loader: 'file-loader',
+             options: {
+               name: '../css/[hash].[ext]'
+             }
+           }
+         ]
+       },
+       {
+         test: /.(png|PNG|jpg|JPG|gif|svg)(\?[a-z0-9=\.]+)?$/,
+         use: [
+           {
+             loader: 'file-loader',
+             options: {
+               name: '../img/[name].[ext]'
+             }
+           }
+         ]
+       },
+       {
+         test : /\.css$/,
+         use: ['style-loader', 'css-loader', 'postcss-loader']
+       },
+       
+     ]
+   },
+ 
+ 
+   externals: {
+     prestashop: 'prestashop',
+     $: '$',
+     jquery: 'jQuery'
+   },
+ 
+ 
+   plugins: [
+     new ExtractTextPlugin(path.join('..', 'css', 'theme.css')),
+     new BrowserSyncPlugin({
+       // browse to http://localhost:3000/ during development,
+       // ./public directory is being served
+       logLevel: "debug",
+       host: 'localhost',
+       port: 3000,
+       files: ['./css/*.scss', './css/**/*.scss', './js/theme.js', '../templates/**/*.tpl', '../modules/**/*.tpl'],
+       // server: { baseDir: ['../'] },
+       proxy: 'http://jacuzziandspa.localhost'
+     },
+     {
+       // prevent BrowserSync from reloading the page
+       // and let Webpack Dev Server take care of this
+       reload: false
+     }
+   )
+   ],
+ 
+   // devtool: "source-map"
+ };
+ 
+ let production = false;
+ 
+ if(production) {
+ 
+   config.plugins.push(
+     new webpack.optimize.UglifyJsPlugin({
+       sourceMap: true,
+       compress: {
+         // sequences: true,
+         // conditionals: true,
+         // booleans: true,
+         // if_return: true,
+         // join_vars: true,
+         // drop_console: true
+       },
+       output: {
+         comments: false
+       },
+       // minimize: true
+     })
+   );
+ 
+ }
+ 
+ module.exports = config;
+ 
